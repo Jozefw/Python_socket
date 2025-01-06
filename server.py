@@ -5,7 +5,7 @@ host = '127.0.0.1'
 port = 8888
 password = 'tropism'
 
-socket_password_server.bind(host,port)
+socket_password_server.bind((host,port))
 socket_password_server.listen()
 client,addr = socket_password_server.accept()
 

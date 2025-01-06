@@ -10,3 +10,10 @@ port = 8008
 #connect to socket server
 
 socket_client.connect((host,port))
+
+#client receives data from socket (in bytes)
+
+server_data = socket_client.recv(1024).decode()
+
+print(f'Here is the data:{server_data}')
+socket_client.close()

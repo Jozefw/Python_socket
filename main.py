@@ -20,6 +20,13 @@ socket_server.listen()
 
 #accept ...this is done when the client is reaching out
 
-conn, addr = socket_server.accept()
+client, addr = socket_server.accept()
 
-print(f"Socket open:{addr} and connection {conn}")
+print(f"Socket open:{addr} and connection {client}")
+
+#Server sends data to client FIRST
+
+
+server_data = "Here is your server packet"
+client.sendall(str.encode(server_data))
+client.close()
